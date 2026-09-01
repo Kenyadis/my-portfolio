@@ -24,6 +24,7 @@ Or via composer: `composer dev` (disables process timeout).
 php artisan test                         # all suites
 php artisan test --filter=TestClassName   # single class
 php artisan test --filter=testMethodName # single method
+composer test                            # clears config cache first, then runs tests
 ```
 
 PHPUnit uses in-memory SQLite (`phpunit.xml`), no external DB needed.
