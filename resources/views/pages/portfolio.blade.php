@@ -53,6 +53,10 @@
                             Explore Portfolio
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                         </a>
+                        <a href="{{ route('resume.download') }}" class="btn-ghost">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            Download Resume
+                        </a>
                         <a href="https://github.com/Kenyadis" target="_blank" rel="noopener noreferrer" class="btn-ghost">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                             GitHub Profile
@@ -112,11 +116,21 @@
                         </div>
                         <div class="flex items-start gap-3">
                             <dt class="text-mist-500 w-20 shrink-0 pt-0.5">Email</dt>
-                            <dd class="text-glow-400 break-all"><a href="mailto:kbernardez83@gmail.com" class="hover:underline">kbernardez83@gmail.com</a></dd>
+                            <dd class="text-glow-400 break-all flex items-center gap-2">
+                                <a href="mailto:kbernardez83@gmail.com" class="hover:underline">kbernardez83@gmail.com</a>
+                                <button type="button" class="copy-btn shrink-0" data-copy="kbernardez83@gmail.com" data-copy-label="Email" aria-label="Copy email address" title="Copy email address">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                </button>
+                            </dd>
                         </div>
                         <div class="flex items-start gap-3">
                             <dt class="text-mist-500 w-20 shrink-0 pt-0.5">Phone</dt>
-                            <dd class="text-mist-200 font-medium">09678196809</dd>
+                            <dd class="text-mist-200 font-medium flex items-center gap-2">
+                                <span>09678196809</span>
+                                <button type="button" class="copy-btn shrink-0" data-copy="09678196809" data-copy-label="Phone number" aria-label="Copy phone number" title="Copy phone number">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                </button>
+                            </dd>
                         </div>
                         <div class="flex items-start gap-3">
                             <dt class="text-mist-500 w-20 shrink-0 pt-0.5">Location</dt>
@@ -171,6 +185,58 @@
                         <p class="text-mist-400 text-sm">Ubbog Lipcan, Bangued, Abra</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ============================================= --}}
+    {{-- CERTIFICATES                                 --}}
+    {{-- ============================================= --}}
+    <div class="section-divider" aria-hidden="true"></div>
+    <section id="certificates" class="py-16 sm:py-20 relative">
+        <div class="constellation faded inset-0"></div>
+
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <x-section-heading title="Certificates" eyebrow="Credentials" />
+            </div>
+
+            @php
+                $certificates = [
+                    ['image' => 'image/certificates/cert-1.jpg', 'title' => 'Startup Now Cordillera', 'issuer' => 'DOST-CAR'],
+                    ['image' => 'image/certificates/cert-2.jpg', 'title' => 'Online Safety Through Netiquette', 'issuer' => 'DICT Region II'],
+                    ['image' => 'image/certificates/cert-3.jpg', 'title' => 'Understanding Startups & PSC XI', 'issuer' => 'DICT-CAR'],
+                    ['image' => 'image/certificates/cert-4.jpg', 'title' => 'Introduction to Modern AI', 'issuer' => 'Cisco / DICT-ITU'],
+                ];
+            @endphp
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 stagger-children">
+                @foreach ($certificates as $certificate)
+                    <a href="{{ asset($certificate['image']) }}" target="_blank" rel="noopener noreferrer"
+                       class="group glass-panel card-hover overflow-hidden relative reveal">
+                        <span class="corner-accent top-left"></span>
+                        <span class="corner-accent top-right"></span>
+                        <span class="corner-accent bottom-left"></span>
+                        <span class="corner-accent bottom-right"></span>
+
+                        <div class="aspect-[4/3] overflow-hidden bg-night-800">
+                            <img src="{{ asset($certificate['image']) }}" alt="{{ $certificate['title'] }} — {{ $certificate['issuer'] }}"
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        </div>
+
+                        <div class="flex items-center justify-between gap-3 p-5">
+                            <div class="min-w-0">
+                                <p class="font-bold text-white group-hover:text-glow-400 transition-colors leading-snug">{{ $certificate['title'] }}</p>
+                                <p class="text-glow-400 text-xs mt-0.5 truncate">{{ $certificate['issuer'] }}</p>
+                                <p class="text-mist-500 text-xs mt-0.5">Click to view full certificate</p>
+                            </div>
+                            <svg class="w-4 h-4 text-mist-500 group-hover:text-glow-400 shrink-0 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -232,10 +298,20 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-children">
+            <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 reveal">
+                <p class="text-mist-400 text-sm">Browse repositories</p>
+                <div class="relative w-full sm:max-w-xs">
+                    <label for="repo-search" class="sr-only">Search repositories</label>
+                    <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-mist-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+                    <input id="repo-search" type="search" class="repo-search" placeholder="Search repositories..." autocomplete="off">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 stagger-children" data-repo-list>
                 {{-- Repo 1 --}}
                 <a href="https://github.com/Kenyadis/Denveay.git" target="_blank" rel="noopener noreferrer"
-                   class="github-card group glass-panel card-hover flex items-start gap-4 p-5">
+                   class="github-card group glass-panel card-hover flex items-start gap-4 p-5"
+                   data-repo-item data-repo-search="denveay project repository kenyadis">
                     <div class="w-10 h-10 rounded-xl bg-night-800 border border-glow-500/20 flex items-center justify-center shrink-0 group-hover:border-glow-500/50 transition-colors">
                         <svg class="w-5 h-5 text-glow-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                     </div>
@@ -250,13 +326,30 @@
 
                 {{-- Repo 2 --}}
                 <a href="https://github.com/Kenyadis/my-portfolio.git" target="_blank" rel="noopener noreferrer"
-                   class="github-card group glass-panel card-hover flex items-start gap-4 p-5">
+                   class="github-card group glass-panel card-hover flex items-start gap-4 p-5"
+                   data-repo-item data-repo-search="my-portfolio my web portfolio laravel project repository kenyadis">
                     <div class="w-10 h-10 rounded-xl bg-night-800 border border-glow-500/20 flex items-center justify-center shrink-0 group-hover:border-glow-500/50 transition-colors">
                         <svg class="w-5 h-5 text-glow-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                     </div>
                     <div class="min-w-0">
                         <p class="font-bold text-white group-hover:text-glow-400 transition-colors">my-portfolio</p>
                         <p class="text-mist-500 text-xs mt-0.5 truncate">github.com/Kenyadis/my-portfolio</p>
+                    </div>
+                    <svg class="w-4 h-4 text-mist-500 group-hover:text-glow-400 shrink-0 mt-1 ml-auto group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                </a>
+
+                {{-- Repo 3 --}}
+                <a href="https://github.com/choeymauzar/abrakeeps" target="_blank" rel="noopener noreferrer"
+                   class="github-card group glass-panel card-hover flex items-start gap-4 p-5"
+                   data-repo-item data-repo-search="abrakeeps abra keeps project repository choeymauzar">
+                    <div class="w-10 h-10 rounded-xl bg-night-800 border border-glow-500/20 flex items-center justify-center shrink-0 group-hover:border-glow-500/50 transition-colors">
+                        <svg class="w-5 h-5 text-glow-400" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="font-bold text-white group-hover:text-glow-400 transition-colors">AbraKEEPS</p>
+                        <p class="text-mist-500 text-xs mt-0.5 truncate">github.com/choeymauzar/abrakeeps</p>
                     </div>
                     <svg class="w-4 h-4 text-mist-500 group-hover:text-glow-400 shrink-0 mt-1 ml-auto group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -278,6 +371,8 @@
                     </svg>
                 </a>
             </div>
+
+            <p id="repo-no-results" hidden class="mt-4 text-center text-sm text-mist-400">No repositories match your search.</p>
         </div>
     </section>
 
